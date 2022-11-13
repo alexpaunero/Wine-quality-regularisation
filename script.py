@@ -12,7 +12,8 @@ features = df.drop(columns = ['quality'])
 
 ## 1. Data transformation
 from sklearn.preprocessing import StandardScaler
-
+standard_scaler_fit = StandardScaler().fit(features)
+X = standard_scaler_fit.transform(features)
 
 ## 2. Train-test split
 from sklearn.model_selection import train_test_split
