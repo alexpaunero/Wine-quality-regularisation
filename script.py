@@ -17,6 +17,7 @@ X = standard_scaler_fit.transform(features)
 
 ## 2. Train-test split
 from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=99)
 
 ## 3. Fit a logistic regression classifier without regularization
 from sklearn.linear_model import LogisticRegression
