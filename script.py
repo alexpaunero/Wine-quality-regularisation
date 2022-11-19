@@ -21,6 +21,8 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 
 ## 3. Fit a logistic regression classifier without regularization
 from sklearn.linear_model import LogisticRegression
+clf_no_reg = LogisticRegression(penalty = 'none')
+clf_no_reg.fit(X_train, y_train)
 
 ## 4. Plot the coefficients
 
