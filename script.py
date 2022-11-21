@@ -25,7 +25,13 @@ clf_no_reg = LogisticRegression(penalty = 'none')
 clf_no_reg.fit(X_train, y_train)
 
 ## 4. Plot the coefficients
-
+predictors = features.columns
+coefficients = clf_no_reg.coef_.ravel()
+coef = pd.Series(coefficients,predictors).sort_values()
+coef.plot(kind='bar', title = 'Coefficients (no regularization)')
+plt.tight_layout()
+plt.show()
+plt.clf()
 
 ## 5. Training and test performance
 from sklearn.metrics import f1_score
