@@ -35,7 +35,10 @@ plt.clf()
 
 ## 5. Training and test performance
 from sklearn.metrics import f1_score
-
+y_pred_test = clf_no_reg.predict(X_test)
+y_pred_train = clf_no_reg.predict(X_train)
+print('Training Score', f1_score(y_train, y_pred_train))
+print('Testing Score', f1_score(y_test, y_pred_test))
 
 ## 6. Default Implementation (L2-regularized!)
 
