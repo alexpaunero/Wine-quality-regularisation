@@ -41,7 +41,8 @@ print('Training Score', f1_score(y_train, y_pred_train))
 print('Testing Score', f1_score(y_test, y_pred_test))
 
 ## 6. Default Implementation (L2-regularized!)
-
+clf_default = LogisticRegression(penalty='l2')
+clf_default.fit(X_train, y_train)
 
 ## 7. Ridge Scores
 
