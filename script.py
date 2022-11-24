@@ -45,7 +45,10 @@ clf_default = LogisticRegression(penalty='l2')
 clf_default.fit(X_train, y_train)
 
 ## 7. Ridge Scores
-
+y_pred_train = clf_default.predict(X_train)
+y_pred_test = clf_default.predict(X_test)
+print('Ridge-regularized Training Score', f1_score(y_train, y_pred_train))
+print('Ridge-regularized Testing Score', f1_score(y_test, y_pred_test))
 
 ## 8. Coarse-grained hyperparameter tuning
 training_array = []
