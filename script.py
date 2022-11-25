@@ -9,7 +9,6 @@ print(df.columns)
 y = df['quality']
 features = df.drop(columns = ['quality'])
 
-
 ## 1. Data transformation
 from sklearn.preprocessing import StandardScaler
 standard_scaler_fit = StandardScaler().fit(features)
@@ -54,8 +53,13 @@ print('Ridge-regularized Testing Score', f1_score(y_test, y_pred_test))
 training_array = []
 test_array = []
 C_array = [0.0001, 0.001, 0.01, 0.1, 1]
-
-
+for x in C_array:
+    clf = LogisticRegression(C = x)
+    clf.fit(X_train, y_train)
+    y_pred_test = clf.predict(X_test)
+    y_pred_train = clf.predict(X_train)
+    training_array.append(f1_score(y_train, y_pred_train))
+    test_array.append(f1_score(y_test, y_pred_test))
 
 ## 9. Plot training and test scores as a function of C
 
