@@ -62,7 +62,11 @@ for x in C_array:
     test_array.append(f1_score(y_test, y_pred_test))
 
 ## 9. Plot training and test scores as a function of C
-
+plt.plot(C_array,training_array)
+plt.plot(C_array,test_array)
+plt.xscale('log')
+plt.show()
+plt.clf()
 
 ## 10. Making a parameter grid for GridSearchCV
 
