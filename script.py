@@ -69,14 +69,17 @@ plt.show()
 plt.clf()
 
 ## 10. Making a parameter grid for GridSearchCV
-
+C_array  = np.logspace(-4, -2, 100)
+tuning_C = {'C':C_array}
 
 ## 11. Implementing GridSearchCV with l2 penalty
 from sklearn.model_selection import GridSearchCV
-
+clf_gs = LogisticRegression()
+gs = GridSearchCV(clf_gs, param_grid = tuning_C, scoring = 'f1', cv = 5)
+gs.fit(X_train,y_train) 
 
 ## 12. Optimal C value and the score corresponding to it
-
+print(gs.best_params_, gs.best_score_)
 
 ## 13. Validating the "best classifier"
 
