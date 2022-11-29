@@ -82,7 +82,10 @@ gs.fit(X_train,y_train)
 print(gs.best_params_, gs.best_score_)
 
 ## 13. Validating the "best classifier"
-
+clf_best_ridge = LogisticRegression(C = gs.best_params_['C'])
+clf_best_ridge.fit(X_train,y_train)
+y_pred_best = clf_best_ridge.predict(X_test)
+print(f1_score(y_test,y_pred_best))
 
 ## 14. Implement L1 hyperparameter tuning with LogisticRegressionCV
 from sklearn.linear_model import LogisticRegressionCV
