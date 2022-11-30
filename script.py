@@ -89,7 +89,9 @@ print(f1_score(y_test,y_pred_best))
 
 ## 14. Implement L1 hyperparameter tuning with LogisticRegressionCV
 from sklearn.linear_model import LogisticRegressionCV
-
+C_array = np.logspace(-2,2,100)
+clf_l1 = LogisticRegressionCV(Cs=C_array, cv = 5, penalty = 'l1', solver = 'liblinear', scoring = 'f1')
+clf_l1.fit(X,y)
 
 ## 15. Optimal C value and corresponding coefficients
 
