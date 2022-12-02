@@ -98,3 +98,10 @@ print('Best C value', clf_l1.C_)
 print('Best fit coefficients', clf_l1.coef_)
 
 ## 16. Plotting the tuned L1 coefficients
+coefficients = clf_l1.coef_.ravel()
+coef = pd.Series(coefficients,predictors).sort_values()
+plt.figure(figsize = (12,8))
+coef.plot(kind='bar', title = 'Coefficients for tuned L1')
+plt.tight_layout()
+plt.show()
+plt.clf()
