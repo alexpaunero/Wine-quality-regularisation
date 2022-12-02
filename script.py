@@ -94,7 +94,7 @@ clf_l1 = LogisticRegressionCV(Cs=C_array, cv = 5, penalty = 'l1', solver = 'libl
 clf_l1.fit(X,y)
 
 ## 15. Optimal C value and corresponding coefficients
-
-
+print('Best C value', clf_l1.C_)
+print('Best fit coefficients', clf_l1.coef_)
 
 ## 16. Plotting the tuned L1 coefficients
